@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Supermercados
+{% endblock %}
+
+{% block content %}
+
+    <h2>Productos en Supermercados</h2>
+
+    {% for market in object_list %}
+
+    <p></p>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="..." alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Nombre Producto: {{market.name_product}}</h5>
+            <p>{{market.location}}</p>
+            <p>Precio ${{market.price}}</p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a type="button" class="btn btn-success" href="/brands/brand-update/{{brand.id}}">Actualizar</a>
+              <a type="button" class="btn btn-danger" href="/brands/brand-delete/{{brand.id}}">Eliminar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}
+
+

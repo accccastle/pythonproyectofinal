@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>{% block title %}  {% endblock %}</title>
+</head>
+
+<body style="background-color: rgb(253, 250, 250);" >
+    <header>
+        <nav class="navbar navbar-light" style="background-color: #e2b8c2;">
+            <a class="btn btn-dark" href="/">Inicio</a>
+            <a href="/admin/" style="background-color:#e2b8c2"class="badge badge-dark">.</a>            
+              <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle" style="margin-left:1500px" type="button" data-toggle="dropdown" aria-expanded="false">
+                    {% if request.user.is_authenticated %}
+                    {{request.user.username}}
+                    {% else %}
+                    Users
+                    {% endif %}                    
+                </button>
+                <div class="dropdown-menu" style="margin-left:1500px">
+                    {% if request.user.is_authenticated %}
+                    <a class="dropdown-item" href="/users/logout/">Logout</a>
+                    {% else %}
+                    <a class="dropdown-item" href="/users/login/">Login</a>
+                    <a class="dropdown-item" href="/users/signup/">Signup</a>
+                    {% endif %}
+                </div>
+              </div>
+              <a type="button" class="btn btn-outline-dark" href="/about/">About Us</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+        <div class="collapse navbar-collapse" style="text-align:right" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/market/market-list/"></p>Listado de Supermercados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/market/location-list/">Listado de Locaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/market/resto-list/">Listado de Restaurantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/brands/brand-list/">Marcas Veganas</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="market/market-list" method="GET">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <span class="d-block p-2 bg-dark text-white"></span>
+        <span class="d-block p-2 bg-dark text-white"></span>
+    </header>
+    
+    {% block content %}
+    {% endblock %}
+
+
+
+
+        <footer class="bg-dark text-center text-white" style="margin-top:600px;">
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"> <i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="" role="button"><i class="fab fa-google"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+            </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        </footer>   
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

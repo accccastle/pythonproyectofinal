@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Hello {{request.user.username}}!</h1>
+    <p class="lead">Gracias por ingresar ☀ </p>
+    <hr class="my-4">
+    <p>Ahora podras actualizar y cargar informacion en nuestra página</p>
+    <a class="btn btn-dark btn-lg" href="/" role="button">Ir al Incio</a>
+  </div>
+{% endblock %}
