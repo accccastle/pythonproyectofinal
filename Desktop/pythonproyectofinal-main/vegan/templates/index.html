@@ -1,22 +1,133 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Index
+    Guia Vegana
 {% endblock %}
 
 {% block content %}
-    <br>
-    <h2>Guia Vegana</h2>
-    <br>
-    
-    <p><a class="btn btn-primary" href="market/location-formulario" role="button">Ingresar Nueva Locacion</a></p>   
-    <p><a class="btn btn-primary" href="market/resto-formulario" role="button">Ingresar Nuevo Restaurantes</a></p>
-    <p><a class="btn btn-primary" href="brands/brand-create" role="button">Ingresar Nueva Marca</a></p>  
-    <p><a class="btn btn-primary" href="market/market-formulario" role="button">Ingresar Nuevo Supermercados</a></p>
-    <p><a class="btn btn-primary" href="market/location-list" role="button">Locaciones</a></p>
-    <p><a class="btn btn-primary" href="market/resto-list" role="button">Restaurantes</a></p>
-    <p><a class="btn btn-primary" href="market/market-list" role="button">Supermercados</a></p>
-    <p><a class="btn btn-primary" href="brands/brand-list" role="button">Marcas Veganas</a></p>
+
+        <style>
+            h1{
+                color:rgb(190, 118, 158);
+                font-family:'Courier New', Courier, monospace;
+                text-align: center;
+                letter-spacing: 2px;
+                text-shadow: 1px 1px 1px rgb(148, 128, 128);
+                font-size: 2cm;   
+            }
+        </style>
+
+        <br>
+        
+            <span class="border border-danger">
+                <h1>Guia Vegana 🫒</h1>
+            </span>
+        
+
+<span class="d-block p-2 bg-muted text-white"></span>
+
+
+<div class="container marketing">
+    <main role="main">
+    <hr class="featurette-divider">  
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading"><br><span class="text-muted">📠 Marcas 100% Veganas</span></h2>
+                <p class="lead">Ingresa a tu usuario para cargar y modificar</p>
+                <p><a class="btn btn-dark" href="/brands/brand-create/" role="button">Nueva Marca</a></p> 
+                <p><a class="btn btn-dark" href="/brands/brand-list/" role="button">Lista</a></p>
+            </div>
+                <div class="col-md-5">
+                    <div align="center">
+                        <img src="/media/brand1.jpg/" class="rounded-pill" alt="" width="400" height="300"/>
+                    </div>        
+                </div>
+        </div>
+        </main>
+
+    <span class="d-block p-2 bg-muted text-white"></span>
+    <span class="d-block p-2 bg-dark text-white"></span>
+    <span class="d-block p-2 bg-muted text-white"></span>
+
+</div>
+
+
+<div class="container marketing">
+    <main role="main">
+    <hr class="featurette-divider">  
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading"><br><span class="text-muted">🛒 Productos en Mercados</span></h2>
+                <p class="lead">Ingresa a tu usuario para cargar y modificar</p>
+                <p><a class="btn btn-dark" href="/market/market-formulario/" role="button">Nueva Mercado</a></p> 
+                <p><a class="btn btn-dark" href="/market/market-list/" role="button">Lista</a></p>
+            </div>
+                <div class="col-md-5">
+                    <div align="center">
+                        <img src="/media/cart1.jpg/" class="rounded-pill" alt="" width="400" height="300"/>
+                    </div>        
+                </div>
+        </div>
+        </main>
+        
+    <span class="d-block p-2 bg-muted text-white"></span>
+    <span class="d-block p-2 bg-dark text-white"></span>
+    <span class="d-block p-2 bg-muted text-white"></span>
+
+</div>
+
+
+<div class="container marketing">
+    <main role="main">
+    <hr class="featurette-divider">  
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading"><br><span class="text-muted">🥢 Restaurantes Veganos</span></h2>
+                <p class="lead">Ingresa a tu usuario para cargar y modificar</p>
+                <p><a class="btn btn-dark" href="/market/resto-formulario" role="button">Nuevo Restaurant</a></p> 
+                <p><a class="btn btn-dark" href="/market/resto-list" role="button">Lista</a></p>
+            </div>
+                <div class="col-md-5">
+                    <div align="center">
+                        <img src="/media/resto3.jpg/" class="rounded-pill" alt="" width="400" height="300"/> 
+                    </div>       
+                </div>
+        </div>
+        </main>
+        
+    <span class="d-block p-2 bg-muted text-white"></span>
+    <span class="d-block p-2 bg-dark text-white"></span>
+    <span class="d-block p-2 bg-muted text-white"></span>
+
+</div>
+
+
+<div class="container marketing">
+    <main role="main">
+    <hr class="featurette-divider">  
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading"><br><span class="text-muted">📍 Locaciones</span></h2>
+                <p class="lead">Ingresa a tu usuario para cargar y modificar</p>
+                <p><a class="btn btn-dark" href="/market/location-formulario" role="button">Nueva Locacion</a></p> 
+                <p><a class="btn btn-dark" href="/market/location-list" role="button">Lista</a></p>
+            </div>
+                <div class="col-md-5">
+                   <div align="center"> 
+                        <img src="/media/map2.jpg" class="rounded-pill" alt="" width="400" height="300"/>
+                    </div>     
+                </div>
+        </div>
+        </main>
+        
+    <span class="d-block p-2 bg-muted text-white"></span>
+    <span class="d-block p-2 bg-dark text-white"></span>
+    <span class="d-block p-2 bg-muted text-white"></span>
+</div>
 
 
 

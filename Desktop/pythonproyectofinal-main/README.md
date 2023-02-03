@@ -4,9 +4,22 @@ Guia Vegana para buscar lugares donde vendan o sirvan productos/comidas veganas,
 
 Desde el index:
 
-- Formularios: Ingresar los datos requeridos (Locaciones, Restaurantes, Supermercados)
+- Formularios: Ingresar los datos requeridos (Locaciones, Restaurantes, Supermercados y Marcas)
 
 - Listados:  Items cargados desde formularios y/o admin previamente
 
-* La barra de busqueda, solo funciona desde el index y la palabra clave para buscar es el nombre en la lista de supermercados (Ej. "coto", "jumbo")
+* La barra de busqueda general solo busca en el listado de productos en supermercados, por cualquiera de los campos, ejemplo para buscar: Jumbo o Dulce
+
+Usuarios:
+
+- Modificar Usuario
+
+- Modificar Perfil
+
+- Ver Perfil
+
+- Eliminar Usuario
+
+
+
 

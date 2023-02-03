@@ -11,6 +11,6 @@ class LocationAdmin(admin.ModelAdmin):
     
 @admin.register(Market)
 class MarketAdmin(admin.ModelAdmin):
-    list_display = ('name_market','name_product','location','price')
+    list_display = ('name_market','name_product','location','price','notes','image_product')
 
 

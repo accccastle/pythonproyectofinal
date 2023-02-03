@@ -5,6 +5,9 @@ class MarketForm(forms.Form):
     name_product = forms.CharField(label='Producto', max_length=100)
     location = forms.CharField(label='Ubicacion', max_length=100)
     price = forms.FloatField(label='Precio')
+    image_product = forms.ImageField(label='Imagen del Producto')
+    notes = forms.CharField(label='Notas', max_length=1000)
+    
     
 class RestoForm(forms.Form):
     name = forms.CharField(label='Nombre', max_length=100)

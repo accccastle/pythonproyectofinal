@@ -1,37 +1,61 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Listado de Marcas
+Listado de Marcas
 {% endblock %}
+
+<style>
+
+  h1{
+    text-align: center;
+  }
+
+</style>
 
 {% block content %}
 
-    
-    <h1><p class="text-center">Marcas Veganas</h1>
+<div>
+    <h2>Marcas Veganas</h2>
+
+    <p><div class="center">
+      <form class="form-inline my-2 my-lg-0" action="/brands/brand-list/" role="search" method="GET">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search" name="search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
+    </form></p>
+    <p><a class="btn btn-dark" href="/brands/brand-create/" role="button">Nueva Marca</a></p> 
 
     {% for brand in object_list %}
     <p></p>
     <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="..." alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{brand.name}}</h5>
-              <p><a href="{{brand.web}}"> {{brand.web}}</a></p>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <a type="button" class="btn btn-success" href="/brands/brand-update/{{brand.id}}">Actualizar</a>
-                <a type="button" class="btn btn-danger" href="/brands/brand-delete/{{brand.id}}">Eliminar</a>
-              </div>
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          {% if brand.image %}
+          <img class="card-img-top" src="{{brand.image.url}}" alt="">
+          {% endif %}
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{brand.name}}</h5>
+            <p><a href="{{brand.web}}"> {{brand.web}}</a></p>
+            <p>{{brand.type_brand}}</p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a type="button" class="btn btn-success" href="/brands/brand-update/{{brand.id}}">Actualizar</a>
+              {% if request.user.is_superuser %}
+              <a type="button" class="btn btn-danger" href="/brands/brand-delete/{{brand.id}}">Eliminar</a>
+              {% endif %}
             </div>
           </div>
         </div>
       </div>
+    </div>
+    
 
 
     {% endfor %}
 
 
+</div>
+
 {% endblock %}
+
 

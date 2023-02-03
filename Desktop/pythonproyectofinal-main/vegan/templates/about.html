@@ -7,4 +7,59 @@
 
 {% block content %}
 
+<style>
+
+    p{
+        text-align: justify;
+        line-height: 40px;
+        font-size: larger;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h2{
+        color:rgb(190, 118, 158);
+        font-family:'Courier New', Courier, monospace;
+        text-align: center;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 1px rgb(148, 128, 128);
+        font-size: 40px;
+        margin-top: 40px;   
+    }
+
+    .div-img{
+        width: 240px;
+        height: 200px;
+        border-radius: 50px;
+        margin-left: 1000px;
+        
+    }
+
+</style>
+
+
+    
+<div class="container marketing">
+    <h2>Sobre Nosotros 📝</h2>
+    <img src="/media/castle1.jpg" class="div-img">
+            <p>Somos un grupo de personas que se dedica a simplificar la<br> 
+                busqueda de comida y productos veganos en el mercado.<br><br> 
+                En nuestro sitio podras buscar, agregar y editar: <br><br>
+                ☐ Locales por Ubicacion ▷  <a type="button" class="badge badge-light" href="/market/location-list/">Aqui</a><br>
+                ☐ Marcas 100% Veganas ▷  <a type="button" class="badge badge-light" href="/brands/brand-list/">Aqui</a> <br>
+                ☐ Productos en Supermercados ▷  <a type="button" class="badge badge-light" href="/market/market-list/">Aqui</a><br>
+                ☐ Restaurantes Veganos o Con Opciones ▷  <a type="button" class="badge badge-light" href="/market/resto-list/">Aqui</a><br><br>
+
+                Si alguna de las marcas o productos ya no estan disponibles,<br>
+                Comunicate con nosotros desde el formulario de contacto <br>
+                Y lo revisaremos lo antes posible <a class="button" href="/contact/">📬</a> . <br><br>
+
+                Entre todos podemos ayudarnos <br><br>
+                101% Plant Based 🌱
+            </p>
+            🧸
+
+        </div>
+
+
+
 {% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Profile
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+  .img-fluid {
+    width: 500px;
+    border-radius: 30%;
+    height: 150px;
+  }
+  
+  .gradient-custom {
+
+    background: #ce8cb5;
+    
+    background: -webkit-linear-gradient(to right bottom, #E0BBE4, #D291BC);
+    
+    background: linear-gradient(to right bottom, #E0BBE4, #D291BC)
+    }
+
+</style>
+
+    <section class="vh-90">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-6 mb-4 mb-lg-0">
+            <div class="card mb-3" style="border-radius: .5rem;">
+              <div class="row g-0">
+                <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                  {% if request.user.is_authenticated %}
+                  <img src="{{request.user.profile.avatar.url}}" alt="Avatar" class="img-fluid my-4"/>
+                  <h5>{{request.user.username}}</h5><br>
+                  <p><a class="btn text-white" style="background-color: #8467a0;" role="button" href="/users/update/">Actualizar Usuario</a></p>
+                  <p><a class="btn text-white" style="background-color: #8467a0;" role="button" href="/users/update-profile/">Actualizar Perfil</a></p>
+                  <p><a class="btn text-white" style="background-color: #ad0505;" role="button" href="/users/delete/{{request.user.id}}/">Eliminar Usuario</a></p>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body p-4">
+                    <h6>Informacion</h6>
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+                      <div class="col-6 mb-3">
+                        <h6>Email</h6>
+                        <p class="text-muted">{{request.user.profile.email}}</p>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h6>Telefono</h6>
+                        <p class="text-muted">{{request.user.profile.phone}}</p>
+                      </div>
+                    </div>
+                    <h6>Media</h6>
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+                      <div class="col-6 mb-3">
+                        <h6>Social Media</h6>
+                        <a href="{{request.user.profile.social_media}}" class="text-muted">{{request.user.profile.social_media}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+{% endblock %}
+
+

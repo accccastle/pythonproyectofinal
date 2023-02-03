@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Detele User
+{% endblock %}
+
+{% block content %}
+<style>
+    div{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    form{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+</style>
+
+<div>
+    <h2>{{object.user}}</h2>
+    <p>Desea elimnar su usuario?</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Borrar">
+    </form>
+</div>
+
+{% endblock %}

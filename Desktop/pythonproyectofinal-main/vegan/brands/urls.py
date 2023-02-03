@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from brands.views import BrandsListView, BrandDeleteView, create_brand, update_brand
 
 

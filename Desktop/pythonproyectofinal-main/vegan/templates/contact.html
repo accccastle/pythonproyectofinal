@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    div{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    form{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+    }
+    
+
+</style>
+
+<div>
+    <h2>Contactanos</h2>
+    <p>Dejanos tu mensaje</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Nombre">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" cols="20" rows="5" placeholder="Tu mensaje"></textarea>
+        <input type="submit" value="Enviar 📪 ">
+    </form>
+</div>
+
+{% endblock %}

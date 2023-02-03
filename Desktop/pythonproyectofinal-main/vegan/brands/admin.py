@@ -3,4 +3,4 @@ from brands.models import Brand
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
-    list_display = ('name','type_brand','web')
+    list_display = ('name','type_brand','web','image')

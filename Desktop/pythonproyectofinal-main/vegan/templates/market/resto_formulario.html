@@ -1,11 +1,30 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Creacion de Restaurantes
+    Marcas Ingreso
 {% endblock %}
 
 {% block content %}
-    <h1>Formulario de ingreso Restaurantes</h1>
+
+<style>
+    div{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    form{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+</style>
+
+<div>
+    <h1>Ingreso Restaurantes</h1>
 
 
 
@@ -33,10 +52,11 @@
 
     {% if message %}
         <h2 style="color: green;" >{{message}}</h2>
+        <p>Volve al listado</p><br><a class="btn text-white" style="background-color: #3b5998;" href="/market/resto-list/" role="button">Aqui</a>
     {% endif %}
 
 
-
+</div>
 
 
 {% endblock %}

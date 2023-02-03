@@ -1,35 +1,61 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  Supermercados
+  Mercados
 {% endblock %}
+
+<style>
+
+  p{
+    align-items: center;
+  }
+
+
+</style>
 
 {% block content %}
 
+  <p>
     <h2>Productos en Supermercados</h2>
 
-    {% for market in object_list %}
+    <p><div class="center">
+      <form class="form-inline my-2 my-lg-0" action="/market/market-list/" role="search" method="GET">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search" name="search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
+    </form></p>
+    <p><a class="btn btn-dark" href="/market/market-formulario/" role="button">Nueva Mercado</a></p>
 
-    <p></p>
+    {% for market in object_list %}
+    
     <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="..." alt="...">
+      <div class="row mb-3">
+        <div class="col-4">
+          {% if market.image_product %}
+          <img class="card-img-top" src="{{market.image_product.url}}" alt="">
+          {% endif %}
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Nombre Producto: {{market.name_product}}</h5>
+            <h5 class="card-title">{{market.name_market}}</h5>
+            <p>{{market.name_product}}</p>
             <p>{{market.location}}</p>
+            <p class="text-muted">{{market.notes}}</p>
             <p>Precio ${{market.price}}</p>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <a type="button" class="btn btn-success" href="/brands/brand-update/{{brand.id}}">Actualizar</a>
-              <a type="button" class="btn btn-danger" href="/brands/brand-delete/{{brand.id}}">Eliminar</a>
+              <a type="button" class="btn btn-success" href="/market/market-update/{{market.id}}">Actualizar</a>
+              {% if request.user.is_superuser %}
+              <a type="button" class="btn btn-danger" href="/market/market-delete/{{market.id}}">Eliminar</a>
+              {% endif %}
             </div>
           </div>
         </div>
       </div>
     </div>
+  </p>
+
     {% endfor %}
+
+
 
 
 {% endblock %}

@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Creacion de Locaciones
+   Ingreso Locaciones
 {% endblock %}
 
 {% block content %}
-    <h1>Fomulario de creacion de Locaciones</h1>
+<style>
+    div{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    form{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+</style>
+
+<div>
+    <h1>Ingreso por Locacion</h1>
    
 
 
@@ -33,9 +50,10 @@
 
     {% if message %}
         <h2 style="color: green;" >{{message}}</h2>
+        <p>Volve al listado</p><br><a class="btn text-white" style="background-color: #3b5998;" href="/market/location-list/" role="button">Aqui</a>
     {% endif %}
 
-
+</div>
 
 
 

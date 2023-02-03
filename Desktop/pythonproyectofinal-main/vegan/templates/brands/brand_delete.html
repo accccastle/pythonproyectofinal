@@ -1,18 +1,34 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    confirmacion de borrado
+    Eliminar
 {% endblock %}
 
 {% block content %}
+<style>
+    div{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
 
-    <h2>Prestador a borrar {{object.name}}</h2>
-    <p>Seguro que desea eliminarlo?</p>
+    form{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+</style>
+
+<div>
+    <h2>{{object.name}}</h2>
+    <p>Desea elimnar?</p>
 
     <form action="" method="POST">
         {% csrf_token %}
         <input type="submit" value="Borrar">
     </form>
-
+</div>
 
 {% endblock %}

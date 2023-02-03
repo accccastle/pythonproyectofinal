@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Actualizacion
+{% endblock %}
+
+{% block content %}
+
+<style>
+    div{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    form{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+</style>
+
+
+<div>
+
+    {% if form %}
+
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+            <table>
+                {{form.as_table}}
+            </table>
+
+
+            <input type="submit" value="Actualizar">
+        </form>
+    {% endif %}
+
+
+    {% if form_errors %}
+        <h2 style="color: red;" >Errores:</h2>
+        {{form_errors}}
+    {% endif %}
+
+
+    {% if message %}
+        <h2 style="color: green;" >{{message}}</h2>
+        <p>Volve al listado</p><br><a class="btn text-white" style="background-color: #3b5998;" href="/market/resto-list/" role="button">Aqui</a>
+    {% endif %}
+</div>
+
+
+{% endblock %}
