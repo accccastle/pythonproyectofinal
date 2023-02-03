@@ -46,8 +46,8 @@ def update_brand(request, pk):
                 'web': brand.web,
                 'image': brand.image,
             }
-        )
-    }
+             )
+            }
 
         return render(request,'brands/brand_update.html', context=context)
     
@@ -57,7 +57,7 @@ def update_brand(request, pk):
             brand.name=form.cleaned_data['name']
             brand.type_brand=form.cleaned_data['type_brand']
             brand.web=form.cleaned_data['web']
-            brand.image=form.cleaned_data['image']
+            brand.image=form.cleaned_data['image'] or brand.image
             brand.save()
             
         context = {

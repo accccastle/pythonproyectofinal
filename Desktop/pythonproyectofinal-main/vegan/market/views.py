@@ -75,7 +75,7 @@ def update_market(request, pk):
             'form_errors': form.errors,
             'form': MarketForm()
         }
-        return render(request,'market/market_update.html', context=context)
+    return render(request,'market/market_update.html', context=context)
 
 class MarketListView(ListView):
     model = Market
@@ -263,3 +263,4 @@ class RestoDeleteView(DeleteView):
     model = Restaurants
     template_name = 'market/resto_delete.html'
     success_url = '/delete/'
+
