@@ -8,7 +8,8 @@ Desde el index:
 
 - Listados:  Items cargados desde formularios y/o admin previamente
 
-* La barra de busqueda general solo busca en el listado de productos en supermercados, por cualquiera de los campos, ejemplo para buscar: Jumbo o Dulce
+* La barra de busqueda general solo busca en el listado de productos en supermercados, por cualquiera de los campos, ejemplo para buscar: Jumbo o Dulce.
+Pero cada listado tiene su barra de busqueda por separado
 
 Usuarios:
 
