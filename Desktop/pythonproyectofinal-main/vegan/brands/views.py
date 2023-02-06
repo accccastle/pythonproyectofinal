@@ -4,6 +4,7 @@ from brands.models import Brand
 from brands.forms import BrandForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 @login_required
 def create_brand(request):
@@ -87,7 +88,7 @@ class BrandsListView(ListView):
             )
         return queryset
 
-class BrandDeleteView(DeleteView):
+class BrandDeleteView(DeleteView, PermissionRequiredMixin):
     model = Brand
     template_name = 'brands/brand_delete.html'
     success_url = '/delete/'

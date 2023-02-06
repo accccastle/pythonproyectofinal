@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-vo=uepc1xye3jm_pr4!idd_dp4x29%((uf68q7s0ah%vhr+gb_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [True]
 
 
 # Application definition
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'market',
     'brands',
     'users',
+    'contact',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
@@ -124,3 +125,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/users/login/'
 AUTH_USER_MODEL = 'auth.User'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'veganacontactoguia@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

@@ -4,6 +4,7 @@ from market.models import Market, Location, Restaurants
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DeleteView
 from django.db.models import Q
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 @login_required
 def create_market(request):
@@ -93,7 +94,7 @@ class MarketListView(ListView):
             )
         return queryset
 
-class MarketDeleteView(DeleteView):
+class MarketDeleteView(DeleteView, PermissionRequiredMixin):
     model = Market
     template_name = 'market/market_delete.html'
     success_url = '/delete/'
@@ -176,7 +177,7 @@ class LocationtListView(ListView):
             )
         return queryset
 
-class LocationDeleteView(DeleteView):
+class LocationDeleteView(DeleteView, PermissionRequiredMixin):
     model = Location
     template_name = 'market/location_delete.html'
     success_url = '/delete/'
@@ -259,7 +260,7 @@ class RestoListView(ListView):
             )
         return queryset
  
-class RestoDeleteView(DeleteView):
+class RestoDeleteView(DeleteView, PermissionRequiredMixin):
     model = Restaurants
     template_name = 'market/resto_delete.html'
     success_url = '/delete/'

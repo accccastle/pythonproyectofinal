@@ -23,7 +23,7 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search" name="search">
         <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
     </form></p>
-    <p><a class="btn btn-dark" href="/market/market-formulario/" role="button">Nueva Mercado</a></p>
+    <p><a class="btn btn-dark" href="/market/market-formulario/" role="button">Nuevo Producto</a></p>
 
     {% for market in object_list %}
     
@@ -39,7 +39,9 @@
             <h5 class="card-title">{{market.name_market}}</h5>
             <p>{{market.name_product}}</p>
             <p>{{market.location}}</p>
+            {% if market.notes %}
             <p class="text-muted">{{market.notes}}</p>
+            {% endif %}
             <p>Precio ${{market.price}}</p>
             <div class="btn-group" role="group" aria-label="Basic example">
               <a type="button" class="btn btn-success" href="/market/market-update/{{market.id}}">Actualizar</a>

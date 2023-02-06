@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from vegan.views import index, about, delete, contact
+from vegan.views import index, about, delete
 from vegan.settings import MEDIA_ROOT, MEDIA_URL
 from django.conf.urls.static import static
+from contact.views import contact
 
 urlpatterns = [
     path('',index, name='index'),
